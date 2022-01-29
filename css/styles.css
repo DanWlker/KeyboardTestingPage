@@ -1,0 +1,94 @@
+body {
+  font: 1.1vw Verdana, Sans-Serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #2E3440;
+}
+
+.textArea {
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #ECEFF4;
+  padding: 10px;
+  width: 70%;
+  padding-bottom: 0%;
+}
+
+.keeb {
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+}
+
+.keeb > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.keeb > div > div {
+  margin: 0.3vw;
+  border-radius: 0.6vw;
+  width: 6.66667%;
+  padding-top: 1.66667%;
+  padding-bottom: 1.66667%;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #ECEFF4;
+}
+
+.keeb .sixPtwofiveU {
+  width: 41.66667%;
+}
+
+.keeb .twoPsevenfiveU {
+  width: 18.33333%;
+}
+
+.keeb .twoPtwofiveU {
+  width: 15%;
+}
+
+.keeb .twoU {
+  width: 13.33333%;
+}
+
+.keeb .onePsevenfiveU {
+  width: 11.66667%;
+}
+
+.keeb .onePfiveU {
+  width: 10%;
+}
+
+.keeb .onePtwofiveU {
+  width: 8.33333%;
+}
+
+.raise:hover,
+.raise:focus {
+  -webkit-box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  -webkit-transform: translateY(-0.25em);
+          transform: translateY(-0.25em);
+  background-color: #BF616A;
+}
+/*# sourceMappingURL=styles.css.map */
