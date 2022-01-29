@@ -2,7 +2,6 @@
      window.onload = init;
      let LShift = false;
      let RShift = false;
-     let tabKeyPressed = false;
 
      function init() {
         document.body.addEventListener('keydown', (e) => {
@@ -14,17 +13,20 @@
                 RShift = true;
             }
 
-            if(e.code === 'Tab') {
-                tabKeyPressed = true;
+            if( 
+            e.code === 'Tab' || 
+            e.code == 'Quote' ||
+            e.code == 'Slash') {
+                e.preventDefault();
             }
 
-            // if(LShift || RShift) {
-            //     let temp = document.getElementById("mainKeyboard").querySelectorAll("#mainKeyboard>div > div");
-            //     for(let i = 0; i < temp.length; ++i) {
-            //         if(!temp[i].classList.contains("raiseBlue"))
-            //             temp[i].className += " raiseBlue "
-            //     }
-            // }
+            if(LShift || RShift) {
+                let temp = document.getElementById("mainKeyboard").querySelectorAll("#mainKeyboard>div > div");
+                for(let i = 0; i < temp.length; ++i) {
+                    if(!temp[i].classList.contains("raiseBlue"))
+                        temp[i].className += " raiseBlue "
+                }
+            }
 
             if(!document.getElementById(e.code).classList.contains("raise"))
                 document.getElementById(e.code).className += " raise ";
@@ -42,21 +44,28 @@
             if(e.code === 'ShiftRight')
                 RShift = false;
 
-            // if(!LShift && !RShift) {
-            //     let temp = document.getElementById("mainKeyboard").querySelectorAll("div, div");
-            //     for(let i = 0; i < temp.length; ++i) {
-            //         temp[i].classList.remove("raiseBlue");
-            //     }
-            // }
-            
-            if(tabKeyPressed) {
-                tabKeyPressed = false;
-                document.getElementById("Tab").classList.remove("raise");
+            if(!LShift && !RShift) {
+                let temp = document.getElementById("mainKeyboard").querySelectorAll("div, div");
+                for(let i = 0; i < temp.length; ++i) {
+                    temp[i].classList.remove("raiseBlue");
+                }
             }
 
             document.getElementById(e.code).classList.remove("raise");
             console.log(e.code);
         })
+
+        document.getElementById("resetButton").onclick = 
+            function() {
+                console.log("Hello");
+                let temp = document.getElementById("mainKeyboard").querySelectorAll("div, div");
+                for(let i = 0; i < temp.length; ++i) {
+                    temp[i].classList.remove("raise");
+                    temp[i].classList.remove("raiseBlue");
+                    temp[i].classList.remove("pressed");
+                }
+            }
+
      }
  })(window, document, undefined);
  
