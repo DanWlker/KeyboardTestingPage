@@ -83,12 +83,12 @@ body {
   width: 8.33333%;
 }
 
-.raise:hover,
-.raise:focus {
-  -webkit-box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-          box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  -webkit-transform: translateY(-0.25em);
-          transform: translateY(-0.25em);
-  background-color: #BF616A;
+.raise {
+  -webkit-transform: translateY(-0.3em);
+          transform: translateY(-0.3em);
+  background-color: #BF616A !important;
+  color: #ECEFF4;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
 }
 /*# sourceMappingURL=styles.css.map */
