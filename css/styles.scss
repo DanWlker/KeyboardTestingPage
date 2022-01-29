@@ -58,7 +58,8 @@ $oneUWidth: (1/15)*100%;
         border-style:solid;
         border-color: $darkestwhite;
         border-width: 0.1vw;
-        color:$white
+        color:$white;
+        transition-duration: 0.2s;
     }
 
     .sixPtwofiveU {

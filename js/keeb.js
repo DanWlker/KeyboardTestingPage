@@ -17,7 +17,8 @@
             e.code === 'Tab' || 
             e.code == 'Quote' ||
             e.code == 'Slash' ||
-            e.code == 'Enter') {
+            e.code == 'Enter' ||
+            e.code == 'Space') {
                 e.preventDefault();
             }
 

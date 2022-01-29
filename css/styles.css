@@ -57,6 +57,8 @@ body {
   border-color: #D8DEE9;
   border-width: 0.1vw;
   color: #ECEFF4;
+  -webkit-transition-duration: 0.2s;
+          transition-duration: 0.2s;
 }
 
 .keeb .sixPtwofiveU {
