@@ -120,11 +120,14 @@ $oneUWidth: (1/15)*100%;
     margin-top: 10px;
 }
 .resetButtonStyle {
-    padding-left: .6*$oneUWidth;
-    padding-right: .6*$oneUWidth;
-    padding-top: .17*$oneUWidth;
-    padding-bottom: .17*$oneUWidth;
-    border-radius: 10vw;
+    // padding-left: .6*$oneUWidth;
+    // padding-right: .6*$oneUWidth;
+    // padding-top: .17*$oneUWidth;
+    // padding-bottom: .17*$oneUWidth;
+    height: 8vw;
+    width: 8vw;
+    font: 1.4vw Verdana, Sans-Serif;
+    border-radius: 100vw;
     background-color: $white;
     border: 0.1vw solid transparent;
     color: $black;

@@ -131,11 +131,10 @@ body {
 }
 
 .resetButtonStyle {
-  padding-left: 4%;
-  padding-right: 4%;
-  padding-top: 1.13333%;
-  padding-bottom: 1.13333%;
-  border-radius: 10vw;
+  height: 8vw;
+  width: 8vw;
+  font: 1.4vw Verdana, Sans-Serif;
+  border-radius: 100vw;
   background-color: #ECEFF4;
   border: 0.1vw solid transparent;
   color: #2E3440;
