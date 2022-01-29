@@ -16,7 +16,8 @@
             if( 
             e.code === 'Tab' || 
             e.code == 'Quote' ||
-            e.code == 'Slash') {
+            e.code == 'Slash' ||
+            e.code == 'Enter') {
                 e.preventDefault();
             }
 
