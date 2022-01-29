@@ -32,6 +32,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 70%;
+  padding: 1.2vw;
 }
 
 .keeb > div {
@@ -52,7 +53,10 @@ body {
   padding-bottom: 1.66667%;
   text-align: center;
   white-space: nowrap;
-  background-color: #ECEFF4;
+  border-style: solid;
+  border-color: #D8DEE9;
+  border-width: 0.1vw;
+  color: #ECEFF4;
 }
 
 .keeb .sixPtwofiveU {
@@ -84,11 +88,27 @@ body {
 }
 
 .raise {
-  -webkit-transform: translateY(-0.3em);
-          transform: translateY(-0.3em);
+  -webkit-transform: translateY(-0.7em) !important;
+          transform: translateY(-0.7em) !important;
   background-color: #BF616A !important;
-  color: #ECEFF4;
+  color: #ECEFF4 !important;
   -webkit-transition-duration: 0.1s;
           transition-duration: 0.1s;
+  border-color: transparent !important;
+}
+
+.raiseBlue {
+  -webkit-transform: translateY(-0.3em);
+          transform: translateY(-0.3em);
+  background-color: #5E81AC;
+  color: #ECEFF4 !important;
+  -webkit-transition-duration: 0.1s;
+          transition-duration: 0.1s;
+  border-color: transparent !important;
+}
+
+.pressed {
+  background-color: #E5E9F0;
+  color: #2E3440 !important;
 }
 /*# sourceMappingURL=styles.css.map */

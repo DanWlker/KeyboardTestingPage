@@ -1,4 +1,7 @@
 $white: #ECEFF4;
+$darkerwhite:#E5E9F0;
+$darkestwhite:#D8DEE9;
+$black:#2E3440;
 $blue: #5E81AC;
 $lightblue:#81A1C1;
 $green: #8FBCBB;
@@ -15,13 +18,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #2E3440;
+    background-color: $black;
 }
 
 .textArea {
     margin-top: 50px;
     border-radius: 10px;
-    background-color: #ECEFF4;
+    background-color: $white;
     padding: 10px;
     width: 70%;
     padding-bottom: 0%;
@@ -34,6 +37,9 @@ $oneUWidth: (1/15)*100%;
     display: flex;
     flex-direction: column;
     width:70%;
+    padding: 1.2vw;
+    //border-radius: 1vw;
+    //background-color: $darkestwhite;
     
 
     > div {
@@ -49,7 +55,10 @@ $oneUWidth: (1/15)*100%;
         padding-bottom: $oneUWidth/4;
         text-align: center;
         white-space: nowrap;
-        background-color: #ECEFF4;
+        border-style:solid;
+        border-color: $darkestwhite;
+        border-width: 0.1vw;
+        color:$white
     }
 
     .sixPtwofiveU {
@@ -82,8 +91,22 @@ $oneUWidth: (1/15)*100%;
 }
 
 .raise {
-    transform: translateY(-0.3em);
+    transform: translateY(-0.7em) !important;
     background-color: $red !important;
-    color: $white;
+    color: $white !important;
     transition-duration: 0.1s;
+    border-color: transparent !important;
+}
+
+.raiseBlue {
+    transform: translateY(-0.3em);
+    background-color: $blue ;
+    color: $white !important;
+    transition-duration: 0.1s;
+    border-color: transparent !important;
+}
+
+.pressed {
+    background-color: $darkerwhite;
+    color: $black !important;
 }
