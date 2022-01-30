@@ -1,5 +1,5 @@
 body {
-  font: 0.1vw Verdana, Sans-Serif;
+  font: 0.7vw Verdana, Sans-Serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,11 +189,19 @@ body {
 }
 
 .key {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 0.6vw;
   height: 2.7vw;
-  line-height: 2.16vw;
   text-align: center;
-  white-space: nowrap;
   border-style: solid;
   border-color: #D8DEE9;
   border-width: 0.1vw;

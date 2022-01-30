@@ -14,7 +14,7 @@ $purple: #B48EAD;
 
 
 body {
-    font: 0.1vw Verdana, Sans-Serif;
+    font: 0.7vw Verdana, Sans-Serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -115,16 +115,18 @@ $oneUWidth: 2.7vw;
 }
 
 .key {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 0.6vw;
     // padding-top: $oneUWidth/3.5;
     // padding-bottom: $oneUWidth/3.5;
     // padding-right: $oneUWidth/20;
     // padding-left: $oneUWidth/20;
     height:$oneUWidth;
-    line-height: $oneUWidth/1.25;
+    //line-height: $oneUWidth/1.25;
     text-align: center;
-    white-space: nowrap;
+    //white-space: nowrap;
     border-style:solid;
     border-color: $darkestwhite;
     border-width: 0.1vw;
