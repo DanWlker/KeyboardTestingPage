@@ -46,6 +46,12 @@
             //     }
             // }
 
+            if(e.code == 'PrintScreen')
+                if(!document.getElementById(e.code).classList.contains("pressed")) 
+                    document.getElementById(e.code).className += " pressed "
+            
+
+
             document.getElementById(e.code).classList.remove("raise");
             console.log(e.code);
         })
