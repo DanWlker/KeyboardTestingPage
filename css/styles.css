@@ -72,9 +72,9 @@ body {
   margin-left: 0.5vw;
   line-height: 1vw;
   border-radius: 0.6vw;
-  width: 7vw;
+  width: 8vw;
   height: 3vw;
-  min-width: 7vw;
+  min-width: 8vw;
   -webkit-animation: logBoxAnim 0.5s;
           animation: logBoxAnim 0.5s;
 }
