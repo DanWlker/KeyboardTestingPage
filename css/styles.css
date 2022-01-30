@@ -1,5 +1,5 @@
 body {
-  font: 1.1vw Verdana, Sans-Serif;
+  font: 1vw Verdana, Sans-Serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,17 +13,20 @@ body {
   background-color: #2E3440;
 }
 
-.textArea {
-  margin-top: 50px;
-  border-radius: 10px;
-  background-color: #ECEFF4;
-  padding: 10px;
-  width: 70%;
-  padding-bottom: 0%;
+.keeb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.keeb {
-  margin-top: 50px;
+.alphaAfRowWrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -31,11 +34,25 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 70%;
-  padding: 1.2vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-.keeb > div {
+.numPad {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.numPad > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,12 +62,78 @@ body {
           flex-direction: row;
 }
 
-.keeb > div > div {
+.numPad .flexRowPlease {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.alphasPart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+}
+
+.alphasPart > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.fRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.addFunctions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 1.5vw;
+  margin-right: 1.5vw;
+}
+
+.addFunctions > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.key {
   margin: 0.3vw;
   border-radius: 0.6vw;
-  width: 6.66667%;
-  padding-top: 1.66667%;
-  padding-bottom: 1.66667%;
+  height: 3vw;
+  line-height: 2.4vw;
   text-align: center;
   white-space: nowrap;
   border-style: solid;
@@ -61,32 +144,53 @@ body {
           transition-duration: 0.2s;
 }
 
-.keeb .sixPtwofiveU {
-  width: 41.66667%;
+.filler {
+  border-color: transparent !important;
 }
 
-.keeb .twoPsevenfiveU {
-  width: 18.33333%;
+.oneU {
+  width: 3vw;
 }
 
-.keeb .twoPtwofiveU {
-  width: 15%;
+.sixPtwofiveU {
+  width: 18.75vw;
 }
 
-.keeb .twoU {
-  width: 13.33333%;
+.twoPsevenfiveU {
+  width: 8.25vw;
 }
 
-.keeb .onePsevenfiveU {
-  width: 11.66667%;
+.twoPtwofiveU {
+  width: 6.75vw;
 }
 
-.keeb .onePfiveU {
-  width: 10%;
+.twoU {
+  width: 6vw;
 }
 
-.keeb .onePtwofiveU {
-  width: 8.33333%;
+.onePsevenfiveU {
+  width: 5.25vw;
+}
+
+.onePfiveU {
+  width: 4.5vw;
+}
+
+.onePtwofiveU {
+  width: 3.75vw;
+}
+
+.zeroPthreeUH {
+  height: 1vw;
+}
+
+.oneUH {
+  height: 3vw;
+}
+
+.twoUH {
+  height: 6.75vw;
+  line-height: 6vw;
 }
 
 .raise {
