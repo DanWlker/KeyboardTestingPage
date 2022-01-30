@@ -19,6 +19,9 @@ body {
     flex-direction: column;
     align-items: center;
     background-color: $black;
+    padding-top: 3vw;
+    color:$white;
+
 }
 
 .keeb {
@@ -130,7 +133,6 @@ $oneUWidth: 2.7vw;
     border-style:solid;
     border-color: $darkestwhite;
     border-width: 0.1vw;
-    color:$white;
     transition-duration: 0.2s;
 }
 
@@ -201,7 +203,7 @@ $oneUWidth: 2.7vw;
 
 .pressed {
     background-color: $darkerwhite;
-    color: $black !important;
+    color: $black;
 }
 
 .sett {

@@ -11,6 +11,8 @@ body {
       -ms-flex-align: center;
           align-items: center;
   background-color: #2E3440;
+  padding-top: 3vw;
+  color: #ECEFF4;
 }
 
 .keeb {
@@ -205,7 +207,6 @@ body {
   border-style: solid;
   border-color: #D8DEE9;
   border-width: 0.1vw;
-  color: #ECEFF4;
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
@@ -281,7 +282,7 @@ body {
 
 .pressed {
   background-color: #E5E9F0;
-  color: #2E3440 !important;
+  color: #2E3440;
 }
 
 .sett {
