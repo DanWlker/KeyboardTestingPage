@@ -14,7 +14,7 @@ $purple: #B48EAD;
 
 
 body {
-    font: 1vw Verdana, Sans-Serif;
+    font: 0.1vw Verdana, Sans-Serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,22 +24,25 @@ body {
 .keeb {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    //width:90%;
+    align-items: space-between;
+    justify-content: space-between;
+    width:80%;
 }
 
 .alphaAfRowWrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    //width: 60%;
+    width: 60%;
 }
+$oneUWidth: 2.7vw;
 
 .numPad {
     display: flex;
     flex-direction: column;
     align-items: center;
-    //width: 20%;
+    justify-content: space-between;
+    width: 20%;
 
     > div {
         display: flex;
@@ -49,8 +52,32 @@ body {
     .flexRowPlease {
         display: flex;
         flex-direction: row;
+        width:100%;
+        justify-content: space-between;
+    }
+
+    &LargerRow {
+        height:30%;
+        width: 80%;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &InsideCol {
+        height:100%;
+        width:75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &SmallerRow {
+        height:14%;
+        width: 80%;
+        justify-content: space-between;
     }
 }
+ 
 
 .alphasPart {
     display: flex;
@@ -60,34 +87,35 @@ body {
     > div {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        margin-top: $oneUWidth/8;
     }
 }
-
-$oneUWidth: 3vw;
-
 
 .fRow {
     display:flex;
     width:100%;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .addFunctions {
     display: flex;
     flex-direction: column;
-    //width: 20%;
-    margin-left: $oneUWidth/2;
-    margin-right: $oneUWidth/2;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
 
     >div {
+        width:61%;
         display: flex;
         flex-direction: row;
-        justify-content: center;
+        justify-content: space-around;
     }
 }
 
 .key {
-    margin: 0.1*$oneUWidth;
+
     border-radius: 0.6vw;
     // padding-top: $oneUWidth/3.5;
     // padding-bottom: $oneUWidth/3.5;
@@ -149,7 +177,7 @@ $oneUWidth: 3vw;
 }
 
 .twoUH {
-    height:2.25*$oneUWidth;
+    height:2*$oneUWidth;
     line-height: 2*$oneUWidth;
 }
 

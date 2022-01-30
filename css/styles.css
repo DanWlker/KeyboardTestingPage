@@ -1,5 +1,5 @@
 body {
-  font: 1vw Verdana, Sans-Serif;
+  font: 0.1vw Verdana, Sans-Serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,9 +21,13 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -webkit-box-align: space-between;
+      -ms-flex-align: space-between;
+          align-items: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 80%;
 }
 
 .alphaAfRowWrapper {
@@ -37,6 +41,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 60%;
 }
 
 .numPad {
@@ -50,6 +55,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 20%;
 }
 
 .numPad > div {
@@ -70,6 +79,44 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  width: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.numPadLargerRow {
+  height: 30%;
+  width: 80%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.numPadInsideCol {
+  height: 100%;
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.numPadSmallerRow {
+  height: 14%;
+  width: 80%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .alphasPart {
@@ -91,6 +138,10 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.3375vw;
 }
 
 .fRow {
@@ -102,6 +153,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .addFunctions {
@@ -112,11 +166,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-left: 1.5vw;
-  margin-right: 1.5vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 20%;
 }
 
 .addFunctions > div {
+  width: 61%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -124,16 +184,14 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 
 .key {
-  margin: 0.3vw;
   border-radius: 0.6vw;
-  height: 3vw;
-  line-height: 2.4vw;
+  height: 2.7vw;
+  line-height: 2.16vw;
   text-align: center;
   white-space: nowrap;
   border-style: solid;
@@ -149,48 +207,48 @@ body {
 }
 
 .oneU {
-  width: 3vw;
+  width: 2.7vw;
 }
 
 .sixPtwofiveU {
-  width: 18.75vw;
+  width: 16.875vw;
 }
 
 .twoPsevenfiveU {
-  width: 8.25vw;
+  width: 7.425vw;
 }
 
 .twoPtwofiveU {
-  width: 6.75vw;
+  width: 6.075vw;
 }
 
 .twoU {
-  width: 6vw;
+  width: 5.4vw;
 }
 
 .onePsevenfiveU {
-  width: 5.25vw;
+  width: 4.725vw;
 }
 
 .onePfiveU {
-  width: 4.5vw;
+  width: 4.05vw;
 }
 
 .onePtwofiveU {
-  width: 3.75vw;
+  width: 3.375vw;
 }
 
 .zeroPthreeUH {
-  height: 1vw;
+  height: 0.9vw;
 }
 
 .oneUH {
-  height: 3vw;
+  height: 2.7vw;
 }
 
 .twoUH {
-  height: 6.75vw;
-  line-height: 6vw;
+  height: 5.4vw;
+  line-height: 5.4vw;
 }
 
 .raise {
