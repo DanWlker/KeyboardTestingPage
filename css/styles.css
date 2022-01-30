@@ -15,6 +15,70 @@ body {
   color: #ECEFF4;
 }
 
+.logger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 3vw;
+  border-left: 0.5vw solid #ECEFF4;
+  height: 4vw;
+  width: 50%;
+  overflow-x: scroll;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@-webkit-keyframes logBoxAnim {
+  from {
+    -webkit-transform: translateX(-6em);
+            transform: translateX(-6em);
+    width: 1vw;
+  }
+  to {
+    -webkit-transform: translateY(0em);
+            transform: translateY(0em);
+    width: 4vw;
+  }
+}
+
+@keyframes logBoxAnim {
+  from {
+    -webkit-transform: translateX(-6em);
+            transform: translateX(-6em);
+    width: 1vw;
+  }
+  to {
+    -webkit-transform: translateY(0em);
+            transform: translateY(0em);
+    width: 4vw;
+  }
+}
+
+.logger .logBox {
+  font-size: 1.5vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  color: #ECEFF4;
+  margin-left: 0.5vw;
+  line-height: 1vw;
+  border-radius: 0.6vw;
+  width: 7vw;
+  height: 3vw;
+  min-width: 7vw;
+  -webkit-animation: logBoxAnim 0.5s;
+          animation: logBoxAnim 0.5s;
+}
+
 .keeb {
   display: -webkit-box;
   display: -ms-flexbox;
