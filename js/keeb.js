@@ -6,6 +6,7 @@
      function init() {
         document.body.addEventListener('keydown', (e) => {
             let pressedKey = e.code;
+            console.log(pressedKey);
 
             if(pressedKey === 'ShiftLeft') {
                 LShift = true;
@@ -28,17 +29,20 @@
             if(pressedKey === "MetaLeft")
                 pressedKey = "OSLeft";
 
+            if(pressedKey === "MetaRight")
+                pressedKey = "OSRight";
+
             if(!document.getElementById(pressedKey).classList.contains("raise"))
                 document.getElementById(pressedKey).className += " raise ";
             
             if(!document.getElementById(pressedKey).classList.contains("pressed")) {
                 document.getElementById(pressedKey).className += " pressed "
             }
-            console.log(pressedKey);
         })
 
         document.body.addEventListener('keyup', (e) => {
             let pressedKey = e.code;
+            console.log(pressedKey);
 
             if(pressedKey === 'ShiftLeft')
                 LShift = false;
@@ -59,10 +63,12 @@
             
             if(pressedKey === "MetaLeft")
                 pressedKey = "OSLeft";
+
+            if(pressedKey === "MetaRight")
+                pressedKey = "OSRight";
             
 
             document.getElementById(pressedKey).classList.remove("raise");
-            console.log(pressedKey);
         })
 
         document.getElementById("resetButton").onclick = 
