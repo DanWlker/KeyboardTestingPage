@@ -5,11 +5,13 @@
 
      function init() {
         document.body.addEventListener('keydown', (e) => {
-            if(e.code === 'ShiftLeft') {
+            let pressedKey = e.code;
+
+            if(pressedKey === 'ShiftLeft') {
                 LShift = true;
             }
 
-            if(e.code === 'ShiftRight'){
+            if(pressedKey === 'ShiftRight'){
                 RShift = true;
             }
 
@@ -23,20 +25,25 @@
             //     }
             // }
 
-            if(!document.getElementById(e.code).classList.contains("raise"))
-                document.getElementById(e.code).className += " raise ";
+            if(pressedKey === "MetaLeft")
+                pressedKey = "OSLeft";
+
+            if(!document.getElementById(pressedKey).classList.contains("raise"))
+                document.getElementById(pressedKey).className += " raise ";
             
-            if(!document.getElementById(e.code).classList.contains("pressed")) {
-                document.getElementById(e.code).className += " pressed "
+            if(!document.getElementById(pressedKey).classList.contains("pressed")) {
+                document.getElementById(pressedKey).className += " pressed "
             }
-            console.log(e.code);
+            console.log(pressedKey);
         })
 
         document.body.addEventListener('keyup', (e) => {
-            if(e.code === 'ShiftLeft')
+            let pressedKey = e.code;
+
+            if(pressedKey === 'ShiftLeft')
                 LShift = false;
 
-            if(e.code === 'ShiftRight')
+            if(pressedKey === 'ShiftRight')
                 RShift = false;
 
             // if(!LShift && !RShift) {
@@ -46,14 +53,16 @@
             //     }
             // }
 
-            if(e.code == 'PrintScreen')
-                if(!document.getElementById(e.code).classList.contains("pressed")) 
-                    document.getElementById(e.code).className += " pressed "
+            if(pressedKey == 'PrintScreen')
+                if(!document.getElementById(pressedKey).classList.contains("pressed")) 
+                    document.getElementById(pressed).className += " pressed ";
+            
+            if(pressedKey === "MetaLeft")
+                pressedKey = "OSLeft";
             
 
-
-            document.getElementById(e.code).classList.remove("raise");
-            console.log(e.code);
+            document.getElementById(pressedKey).classList.remove("raise");
+            console.log(pressedKey);
         })
 
         document.getElementById("resetButton").onclick = 
