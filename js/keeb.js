@@ -62,9 +62,16 @@
             //     }
             // }
 
-            if(pressedKey == 'PrintScreen')
+            if(pressedKey == 'PrintScreen') {
                 if(!document.getElementById(pressedKey).classList.contains("pressed")) 
-                    document.getElementById(pressed).className += " pressed ";
+                    document.getElementById(pressedKey).className += " pressed ";
+                
+                let tempDiv = document.createElement("div");
+                tempDiv.className = "logBox";
+                tempDiv.textContent = e.key;
+                document.getElementById("logHolder").prepend(tempDiv);
+            }
+                
             
             if(pressedKey === "MetaLeft")
                 pressedKey = "OSLeft";
