@@ -1,6 +1,6 @@
 $white: #ECEFF4;
 $darkerwhite:#E5E9F0;
-$darkestwhite:#D8DEE9;
+$darkestwhite:#ACB1BA;
 $black:#2E3440;
 $blue: #5E81AC;
 $lightblue:#81A1C1;
@@ -69,7 +69,7 @@ body {
     flex-direction: row;
     align-items: space-between;
     justify-content: space-between;
-    width:80%;
+    width:90%;
 }
 
 .alphaAfRowWrapper {
@@ -78,7 +78,7 @@ body {
     align-items: center;
     width: 60%;
 }
-$oneUWidth: 2.7vw;
+$oneUWidth: 3vw;
 
 .numPad {
     display: flex;
@@ -131,7 +131,7 @@ $oneUWidth: 2.7vw;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: $oneUWidth/8;
+        margin-top: calc($oneUWidth / 8)
     }
 }
 
@@ -161,7 +161,7 @@ $oneUWidth: 2.7vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 0.6vw;
+    border-radius: 0.7vw;
     // padding-top: $oneUWidth/3.5;
     // padding-bottom: $oneUWidth/3.5;
     // padding-right: $oneUWidth/20;
@@ -213,7 +213,7 @@ $oneUWidth: 2.7vw;
 }
 
 .zeroPthreeUH {
-    height:$oneUWidth/3;
+    height: calc($oneUWidth / 3)
 }
 
 .oneUH { 
