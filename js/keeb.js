@@ -2,6 +2,7 @@
      window.onload = init;
      let LShift = false;
      let RShift = false;
+     let frequencyMap = new Map();
 
      function init() {
         document.body.addEventListener('keydown', (e) => {
@@ -81,16 +82,36 @@
             
 
             document.getElementById(pressedKey).classList.remove("raise");
+            frequencyMap.set(pressedKey, (frequencyMap.get(pressedKey) || 0) + 1);
+            let currentFrequency = frequencyMap.get(pressedKey);
+            console.log(currentFrequency);
+
+            let cornerKeyId = `${pressedKey}_corner`;
+            let cornerText = document.getElementById(cornerKeyId);
+
+            if(!cornerText) {
+                cornerText = document.createElement("div");
+                cornerText.id = cornerKeyId;
+                cornerText.className = "cornerText"
+                document.getElementById(pressedKey).prepend(cornerText);
+            }
+
+            cornerText.textContent = currentFrequency;
         })
 
         document.getElementById("resetButton").onclick = 
             function() {
-                console.log("Hello");
+                console.log("Resetting...");
                 let temp = document.querySelectorAll(".key");
                 for(let i = 0; i < temp.length; ++i) {
                     temp[i].classList.remove("raise");
                     temp[i].classList.remove("raiseBlue");
                     temp[i].classList.remove("pressed");
+                }
+                frequencyMap.clear();
+                let temp_2 = document.querySelectorAll(".cornerText");
+                for(let i = 0; i < temp_2.length; ++i) {
+                    temp_2[i].textContent = "";
                 }
             }
 

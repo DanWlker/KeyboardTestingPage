@@ -128,17 +128,25 @@ body {
   justify-content: space-around;
 }
 
+.cornerText {
+  position: absolute;
+  top: 0.25vw;
+  right: 0.3vw;
+  font-size: 0.75vw;
+}
+
 .key {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 0.7vw;
+  border-radius: 0.6vw;
   height: 3vw;
   text-align: center;
   border-style: solid;
   border-color: #ACB1BA;
   border-width: 0.1vw;
   transition-duration: 0.2s;
+  position: relative;
 }
 
 .filler {
@@ -208,6 +216,7 @@ body {
 
 .pressed {
   background-color: #E5E9F0;
+  border-color: #E5E9F0 !important;
   color: #2E3440;
 }
 
