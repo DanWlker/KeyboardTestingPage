@@ -3,6 +3,10 @@
   let frequencyMap = new Map();
 
   let appendToLog = function (key) {
+    if (key === " ") {
+      key = "Space";
+    }
+
     let tempListItem = document.createElement("li");
     tempListItem.className = "logBox";
     tempListItem.textContent = key;
@@ -12,19 +16,7 @@
     }, 6);
   };
 
-  let downKeyDo = function (e, pressedKey) {
-    if (!document.getElementById(pressedKey).classList.contains("raise"))
-      document.getElementById(pressedKey).className += " raise ";
-
-    if (!document.getElementById(pressedKey).classList.contains("pressed")) {
-      document.getElementById(pressedKey).className += " pressed ";
-    }
-
-    appendToLog(e.key);
-  };
-
-  let upKeyDo = function (pressedKey) {
-    document.getElementById(pressedKey).classList.remove("raise");
+  let updateFrequency = function (pressedKey) {
     frequencyMap.set(pressedKey, (frequencyMap.get(pressedKey) || 0) + 1);
     let currentFrequency = frequencyMap.get(pressedKey);
     console.log(currentFrequency);
@@ -42,12 +34,31 @@
     cornerText.textContent = currentFrequency;
   };
 
+  let downKeyDo = function (e, pressedKey) {
+    if (!document.getElementById(pressedKey).classList.contains("raise"))
+      document.getElementById(pressedKey).className += " raise ";
+
+    if (!document.getElementById(pressedKey).classList.contains("pressed")) {
+      document.getElementById(pressedKey).className += " pressed ";
+    }
+
+    updateFrequency(pressedKey);
+    appendToLog(e.key);
+  };
+
+  let upKeyDo = function (pressedKey) {
+    document.getElementById(pressedKey).classList.remove("raise");
+  };
+
   let getAlternateKeyRepresentation = function (key) {
-    if (key === "MetaLeft") key = "OSLeft";
-
-    if (key === "MetaRight") key = "OSRight";
-
-    if (key === "Help") key = "Insert";
+    switch (key) {
+      case "MetaLeft":
+        return "OSLeft";
+      case "MetaRight":
+        return "OSRight";
+      case "Help":
+        return "Insert";
+    }
 
     return key;
   };
@@ -66,6 +77,7 @@
         let capsLockOn = e.getModifierState("CapsLock");
         if (capsLockOn !== true) {
           upKeyDo(pressedKey);
+          updateFrequency(pressedKey);
           appendToLog(e.key);
           return;
         }
@@ -78,14 +90,15 @@
       let pressedKey = e.code;
       console.log(pressedKey);
 
-      if (pressedKey == "PrintScreen") {
+      if (pressedKey === "PrintScreen") {
         if (!document.getElementById(pressedKey).classList.contains("pressed"))
           document.getElementById(pressedKey).className += " pressed ";
+        appendToLog(e.key);
+      }
 
-        let tempDiv = document.createElement("div");
-        tempDiv.className = "logBox";
-        tempDiv.textContent = e.key;
-        document.getElementById("logHolder").prepend(tempDiv);
+      // We handle caps lock in KeyUp
+      if (pressedKey === "CapsLock") {
+        return;
       }
 
       pressedKey = getAlternateKeyRepresentation(pressedKey);
