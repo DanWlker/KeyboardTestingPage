@@ -11,7 +11,7 @@ body {
 .logger {
   display: flex;
   margin-bottom: 3vw;
-  border-left: 0.4vw solid #ECEFF4;
+  border-left: 0.4vw solid #ACB1BA;
   height: 5vw;
   width: 80%;
   overflow-x: scroll;
@@ -20,17 +20,15 @@ body {
   align-items: center;
 }
 .logger .logBox {
-  font-size: 1.4vw;
+  font-size: 1.2vw;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ECEFF4;
   margin-left: 1vw;
-  line-height: 1vw;
-  border: 2px solid #8FBCBB;
-  border-radius: 0.6vw;
-  width: 7vw;
-  height: 3vw;
+  background-color: #434c5e;
+  border-radius: 1vw;
+  height: 3.3vw;
   min-width: 8vw;
   opacity: 0;
   transform: rotateY(-90deg);
@@ -137,7 +135,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border-radius: 0.6vw;
+  border-radius: 0.7vw;
   height: 3vw;
   text-align: center;
   border-style: solid;
@@ -232,7 +230,7 @@ body {
   width: 8vw;
   font: 1.4vw Verdana, Sans-Serif;
   border-radius: 100vw;
-  background-color: #ECEFF4;
+  background-color: #E5E9F0;
   border: 0.1vw solid transparent;
   color: #2E3440;
 }

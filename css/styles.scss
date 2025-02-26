@@ -2,6 +2,7 @@ $white: #ECEFF4;
 $darkerwhite: #E5E9F0;
 $darkestwhite: #ACB1BA;
 $black: #2E3440;
+$light_black: #434c5e;
 $blue: #5E81AC;
 $lightblue: #81A1C1;
 $green: #8FBCBB;
@@ -26,7 +27,7 @@ body {
 .logger {
     display: flex;
     margin-bottom: 3vw;
-    border-left: 0.4vw solid $white;
+    border-left: 0.4vw solid $darkestwhite;
     height: 5vw;
     width: 80%;
     overflow-x: scroll;
@@ -35,17 +36,15 @@ body {
     align-items: center;
 
     .logBox {
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         display: flex;
         align-items: center;
         justify-content: center;
         color: $white;
         margin-left: 1.0vw;
-        line-height: 1vw;
-        border: 2px solid $green;
-        border-radius: 0.6vw;
-        width: 7vw;
-        height: 3vw;
+        background-color: $light_black;
+        border-radius: 1vw;
+        height: 3.3vw;
         min-width: 8vw;
         opacity: 0;
         transform: rotateY(-90deg);
@@ -164,7 +163,7 @@ $oneUWidth: 3vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 0.6vw;
+    border-radius: 0.7vw;
     // padding-top: $oneUWidth/3.5;
     // padding-bottom: $oneUWidth/3.5;
     // padding-right: $oneUWidth/20;
@@ -269,7 +268,7 @@ $oneUWidth: 3vw;
     width: 8vw;
     font: 1.4vw Verdana, Sans-Serif;
     border-radius: 100vw;
-    background-color: $white;
+    background-color: $darkerwhite;
     border: 0.1vw solid transparent;
     color: $black;
 
