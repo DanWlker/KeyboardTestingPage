@@ -1,123 +1,111 @@
- (function(window, document, undefined) {
-     window.onload = init;
-     let LShift = false;
-     let RShift = false;
-     let frequencyMap = new Map();
+(function (window, document, _) {
+  window.onload = init;
+  let frequencyMap = new Map();
 
-     function init() {
-        document.body.addEventListener('keydown', (e) => {
-            let pressedKey = e.code;
-            console.log(pressedKey);
+  let appendToLog = function (key) {
+    let tempListItem = document.createElement("li");
+    tempListItem.className = "logBox";
+    tempListItem.textContent = key;
+    document.getElementById("logHolder").prepend(tempListItem);
+    setTimeout(function () {
+      tempListItem.className = tempListItem.className + " show";
+    }, 6);
+  };
 
-            if(pressedKey === 'ShiftLeft') {
-                LShift = true;
-            }
+  let downKeyDo = function (e, pressedKey) {
+    if (!document.getElementById(pressedKey).classList.contains("raise"))
+      document.getElementById(pressedKey).className += " raise ";
 
-            if(pressedKey === 'ShiftRight'){
-                RShift = true;
-            }
+    if (!document.getElementById(pressedKey).classList.contains("pressed")) {
+      document.getElementById(pressedKey).className += " pressed ";
+    }
 
-            e.preventDefault();
+    appendToLog(e.key);
+  };
 
-            // if(LShift || RShift) {
-            //     let temp = document.getElementById("mainKeyboard").querySelectorAll("#mainKeyboard>div > div");
-            //     for(let i = 0; i < temp.length; ++i) {
-            //         if(!temp[i].classList.contains("raiseBlue"))
-            //             temp[i].className += " raiseBlue "
-            //     }
-            // }
+  let upKeyDo = function (pressedKey) {
+    document.getElementById(pressedKey).classList.remove("raise");
+    frequencyMap.set(pressedKey, (frequencyMap.get(pressedKey) || 0) + 1);
+    let currentFrequency = frequencyMap.get(pressedKey);
+    console.log(currentFrequency);
 
-            if(pressedKey === "MetaLeft")
-                pressedKey = "OSLeft";
+    let cornerKeyId = `${pressedKey}_corner`;
+    let cornerText = document.getElementById(cornerKeyId);
 
-            if(pressedKey === "MetaRight")
-                pressedKey = "OSRight";
+    if (!cornerText) {
+      cornerText = document.createElement("div");
+      cornerText.id = cornerKeyId;
+      cornerText.className = "cornerText";
+      document.getElementById(pressedKey).prepend(cornerText);
+    }
 
-            if(!document.getElementById(pressedKey).classList.contains("raise"))
-                document.getElementById(pressedKey).className += " raise ";
-            
-            if(!document.getElementById(pressedKey).classList.contains("pressed")) {
-                document.getElementById(pressedKey).className += " pressed "
-            }
+    cornerText.textContent = currentFrequency;
+  };
 
-            let tempDiv = document.createElement("div");
-            tempDiv.className = "logBox";
-            tempDiv.textContent = e.key;
-            document.getElementById("logHolder").prepend(tempDiv);
-        })
+  let getAlternateKeyRepresentation = function (key) {
+    if (key === "MetaLeft") key = "OSLeft";
 
-        document.body.addEventListener('keyup', (e) => {
-            let pressedKey = e.code;
-            console.log(pressedKey);
+    if (key === "MetaRight") key = "OSRight";
 
-            if(pressedKey === 'ShiftLeft')
-                LShift = false;
+    if (key === "Help") key = "Insert";
 
-            if(pressedKey === 'ShiftRight')
-                RShift = false;
+    return key;
+  };
 
-            // if(!LShift && !RShift) {
-            //     let temp = document.getElementById("mainKeyboard").querySelectorAll("div, div");
-            //     for(let i = 0; i < temp.length; ++i) {
-            //         temp[i].classList.remove("raiseBlue");
-            //     }
-            // }
+  function init() {
+    document.body.addEventListener("keydown", (e) => {
+      let pressedKey = e.code;
+      console.log(pressedKey);
 
-            if(pressedKey == 'PrintScreen') {
-                if(!document.getElementById(pressedKey).classList.contains("pressed")) 
-                    document.getElementById(pressedKey).className += " pressed ";
-                
-                let tempDiv = document.createElement("div");
-                tempDiv.className = "logBox";
-                tempDiv.textContent = e.key;
-                document.getElementById("logHolder").prepend(tempDiv);
-            }
-                
-            
-            if(pressedKey === "MetaLeft")
-                pressedKey = "OSLeft";
+      e.preventDefault();
 
-            if(pressedKey === "MetaRight")
-                pressedKey = "OSRight";
-            
+      pressedKey = getAlternateKeyRepresentation(pressedKey);
 
-            document.getElementById(pressedKey).classList.remove("raise");
-            frequencyMap.set(pressedKey, (frequencyMap.get(pressedKey) || 0) + 1);
-            let currentFrequency = frequencyMap.get(pressedKey);
-            console.log(currentFrequency);
+      // We need to handle caps lock somewhat hackily on Mac
+      if (pressedKey === "CapsLock") {
+        let capsLockOn = e.getModifierState("CapsLock");
+        if (capsLockOn !== true) {
+          upKeyDo(pressedKey);
+          appendToLog(e.key);
+          return;
+        }
+      }
 
-            let cornerKeyId = `${pressedKey}_corner`;
-            let cornerText = document.getElementById(cornerKeyId);
+      downKeyDo(e, pressedKey);
+    });
 
-            if(!cornerText) {
-                cornerText = document.createElement("div");
-                cornerText.id = cornerKeyId;
-                cornerText.className = "cornerText"
-                document.getElementById(pressedKey).prepend(cornerText);
-            }
+    document.body.addEventListener("keyup", (e) => {
+      let pressedKey = e.code;
+      console.log(pressedKey);
 
-            cornerText.textContent = currentFrequency;
-        })
+      if (pressedKey == "PrintScreen") {
+        if (!document.getElementById(pressedKey).classList.contains("pressed"))
+          document.getElementById(pressedKey).className += " pressed ";
 
-        document.getElementById("resetButton").onclick = 
-            function() {
-                console.log("Resetting...");
-                let temp = document.querySelectorAll(".key");
-                for(let i = 0; i < temp.length; ++i) {
-                    temp[i].classList.remove("raise");
-                    temp[i].classList.remove("raiseBlue");
-                    temp[i].classList.remove("pressed");
-                }
-                frequencyMap.clear();
-                let temp_2 = document.querySelectorAll(".cornerText");
-                for(let i = 0; i < temp_2.length; ++i) {
-                    temp_2[i].textContent = "";
-                }
-            }
+        let tempDiv = document.createElement("div");
+        tempDiv.className = "logBox";
+        tempDiv.textContent = e.key;
+        document.getElementById("logHolder").prepend(tempDiv);
+      }
 
-     }
- })(window, document, undefined);
- 
- 
+      pressedKey = getAlternateKeyRepresentation(pressedKey);
 
+      upKeyDo(pressedKey);
+    });
 
+    document.getElementById("resetButton").onclick = function () {
+      console.log("Resetting...");
+      let temp = document.querySelectorAll(".key");
+      for (let i = 0; i < temp.length; ++i) {
+        temp[i].classList.remove("raise");
+        temp[i].classList.remove("raiseBlue");
+        temp[i].classList.remove("pressed");
+      }
+      frequencyMap.clear();
+      let temp_2 = document.querySelectorAll(".cornerText");
+      for (let i = 0; i < temp_2.length; ++i) {
+        temp_2[i].textContent = "";
+      }
+    };
+  }
+})(window, document, undefined);

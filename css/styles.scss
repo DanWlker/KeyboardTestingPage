@@ -1,9 +1,9 @@
 $white: #ECEFF4;
-$darkerwhite:#E5E9F0;
-$darkestwhite:#ACB1BA;
-$black:#2E3440;
+$darkerwhite: #E5E9F0;
+$darkestwhite: #ACB1BA;
+$black: #2E3440;
 $blue: #5E81AC;
-$lightblue:#81A1C1;
+$lightblue: #81A1C1;
 $green: #8FBCBB;
 $turquioseblue: #88C0D0;
 $red: #BF616A;
@@ -20,47 +20,42 @@ body {
     align-items: center;
     background-color: $black;
     padding-top: 3vw;
-    color:$white;
-
+    color: $white;
 }
 
 .logger {
     display: flex;
     margin-bottom: 3vw;
-    border-left: 0.5vw solid $white;
-    height:4vw;
-    width: 50%;
+    border-left: 0.4vw solid $white;
+    height: 5vw;
+    width: 80%;
     overflow-x: scroll;
     overflow: hidden;
     scroll-behavior: smooth;
     align-items: center;
 
-    @keyframes logBoxAnim {
-        from{
-            transform: translateX(-6em);
-            width:1vw;
-        }
-        to{
-            transform: translateY(0em);
-            width:4vw;
-        }
-
-    }
-
     .logBox {
-        font-size: 1.5vw;
+        font-size: 1.4vw;
         display: flex;
         align-items: center;
         justify-content: center;
         color: $white;
-        margin-left:0.5vw;
+        margin-left: 1.0vw;
         line-height: 1vw;
-        //background-color: $green;
+        border: 2px solid $green;
         border-radius: 0.6vw;
-        width: 8vw;
+        width: 7vw;
         height: 3vw;
         min-width: 8vw;
-        animation: logBoxAnim 0.5s;
+        opacity: 0;
+        transform: rotateY(-90deg);
+        transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+    }
+
+    .show {
+        opacity: 1;
+        transform: none;
+        transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
     }
 }
 
@@ -69,7 +64,7 @@ body {
     flex-direction: row;
     align-items: space-between;
     justify-content: space-between;
-    width:90%;
+    width: 90%;
 }
 
 .alphaAfRowWrapper {
@@ -78,6 +73,7 @@ body {
     align-items: center;
     width: 60%;
 }
+
 $oneUWidth: 3vw;
 
 .numPad {
@@ -87,7 +83,7 @@ $oneUWidth: 3vw;
     justify-content: space-between;
     width: 20%;
 
-    > div {
+    >div {
         display: flex;
         flex-direction: row;
     }
@@ -95,39 +91,39 @@ $oneUWidth: 3vw;
     .flexRowPlease {
         display: flex;
         flex-direction: row;
-        width:100%;
+        width: 100%;
         justify-content: space-between;
     }
 
     &LargerRow {
-        height:30%;
+        height: 30%;
         width: 80%;
         justify-content: space-between;
         align-items: center;
     }
 
     &InsideCol {
-        height:100%;
-        width:75%;
+        height: 100%;
+        width: 75%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
     }
 
     &SmallerRow {
-        height:14%;
+        height: 14%;
         width: 80%;
         justify-content: space-between;
     }
 }
- 
+
 
 .alphasPart {
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    > div {
+    >div {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -136,8 +132,8 @@ $oneUWidth: 3vw;
 }
 
 .fRow {
-    display:flex;
-    width:100%;
+    display: flex;
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
 }
@@ -150,7 +146,7 @@ $oneUWidth: 3vw;
     width: 20%;
 
     >div {
-        width:61%;
+        width: 61%;
         display: flex;
         flex-direction: row;
         justify-content: space-around;
@@ -173,11 +169,11 @@ $oneUWidth: 3vw;
     // padding-bottom: $oneUWidth/3.5;
     // padding-right: $oneUWidth/20;
     // padding-left: $oneUWidth/20;
-    height:$oneUWidth;
+    height: $oneUWidth;
     //line-height: $oneUWidth/1.25;
     text-align: center;
     //white-space: nowrap;
-    border-style:solid;
+    border-style: solid;
     border-color: $darkestwhite;
     border-width: 0.1vw;
     transition-duration: 0.2s;
@@ -189,15 +185,15 @@ $oneUWidth: 3vw;
 }
 
 .oneU {
-    width:$oneUWidth;
+    width: $oneUWidth;
 }
 
 .sixPtwofiveU {
-    width:6.25*$oneUWidth;
+    width: 6.25*$oneUWidth;
 }
 
 .twoPsevenfiveU {
-    width:2.75*$oneUWidth;
+    width: 2.75*$oneUWidth;
 }
 
 .twoPtwofiveU {
@@ -217,19 +213,19 @@ $oneUWidth: 3vw;
 }
 
 .onePtwofiveU {
-    width:1.25*$oneUWidth;
+    width: 1.25*$oneUWidth;
 }
 
 .zeroPthreeUH {
     height: calc($oneUWidth / 3)
 }
 
-.oneUH { 
-    height:$oneUWidth;
+.oneUH {
+    height: $oneUWidth;
 }
 
 .twoUH {
-    height:2*$oneUWidth;
+    height: 2*$oneUWidth;
     line-height: 2*$oneUWidth;
 }
 
@@ -258,11 +254,12 @@ $oneUWidth: 3vw;
 .sett {
     display: flex;
     flex-direction: row;
-    width:70%;
+    width: 70%;
     align-items: center;
     justify-content: center;
     margin-top: 3vw;
 }
+
 .resetButtonStyle {
     // padding-left: .6*$oneUWidth;
     // padding-right: .6*$oneUWidth;
@@ -276,7 +273,7 @@ $oneUWidth: 3vw;
     border: 0.1vw solid transparent;
     color: $black;
 
-    &:hover{
+    &:hover {
         transition-duration: 0.2s;
         transform: translateY(-0.25em);
         background-color: $lightblue;
@@ -290,5 +287,5 @@ $oneUWidth: 3vw;
         color: $white;
     }
 
-    
+
 }

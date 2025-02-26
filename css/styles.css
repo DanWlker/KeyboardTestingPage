@@ -11,37 +11,35 @@ body {
 .logger {
   display: flex;
   margin-bottom: 3vw;
-  border-left: 0.5vw solid #ECEFF4;
-  height: 4vw;
-  width: 50%;
+  border-left: 0.4vw solid #ECEFF4;
+  height: 5vw;
+  width: 80%;
   overflow-x: scroll;
   overflow: hidden;
   scroll-behavior: smooth;
   align-items: center;
 }
-@keyframes logBoxAnim {
-  from {
-    transform: translateX(-6em);
-    width: 1vw;
-  }
-  to {
-    transform: translateY(0em);
-    width: 4vw;
-  }
-}
 .logger .logBox {
-  font-size: 1.5vw;
+  font-size: 1.4vw;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ECEFF4;
-  margin-left: 0.5vw;
+  margin-left: 1vw;
   line-height: 1vw;
+  border: 2px solid #8FBCBB;
   border-radius: 0.6vw;
-  width: 8vw;
+  width: 7vw;
   height: 3vw;
   min-width: 8vw;
-  animation: logBoxAnim 0.5s;
+  opacity: 0;
+  transform: rotateY(-90deg);
+  transition: all 0.5s cubic-bezier(0.36, -0.64, 0.34, 1.76);
+}
+.logger .show {
+  opacity: 1;
+  transform: none;
+  transition: all 0.5s cubic-bezier(0.36, -0.64, 0.34, 1.76);
 }
 
 .keeb {
