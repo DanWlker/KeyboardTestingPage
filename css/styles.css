@@ -27,9 +27,10 @@ body {
   color: #ECEFF4;
   margin-left: 1vw;
   background-color: #434c5e;
-  border-radius: 1vw;
-  height: 3.3vw;
-  min-width: 8vw;
+  border-radius: 0.8vw;
+  text-transform: capitalize;
+  padding: 1vw 1.2vw 0.8vw;
+  text-align: center;
   opacity: 0;
   transform: rotateY(-90deg);
   transition: all 0.5s cubic-bezier(0.36, -0.64, 0.34, 1.76);

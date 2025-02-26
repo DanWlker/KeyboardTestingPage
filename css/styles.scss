@@ -43,9 +43,10 @@ body {
         color: $white;
         margin-left: 1.0vw;
         background-color: $light_black;
-        border-radius: 1vw;
-        height: 3.3vw;
-        min-width: 8vw;
+        border-radius: 0.8vw;
+        text-transform: capitalize;
+        padding: 1vw 1.2vw 0.8vw;
+        text-align: center;
         opacity: 0;
         transform: rotateY(-90deg);
         transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
