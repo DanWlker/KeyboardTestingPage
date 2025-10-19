@@ -1,21 +1,22 @@
-$white: #ECEFF4;
-$darkerwhite: #E5E9F0;
-$darkestwhite: #ACB1BA;
-$black: #2E3440;
+$white: #eceff4;
+$darkerwhite: #e5e9f0;
+$darkestwhite: #acb1ba;
+$black: #2e3440;
 $light_black: #434c5e;
-$blue: #5E81AC;
-$lightblue: #81A1C1;
-$green: #8FBCBB;
-$turquioseblue: #88C0D0;
-$red: #BF616A;
-$orange: #D08770;
-$yellow: #EBCB8B;
-$othergreen: #A3BE8C;
-$purple: #B48EAD;
-
+$blue: #5e81ac;
+$lightblue: #81a1c1;
+$green: #8fbcbb;
+$turquioseblue: #88c0d0;
+$red: #bf616a;
+$orange: #d08770;
+$yellow: #ebcb8b;
+$othergreen: #a3be8c;
+$purple: #b48ead;
 
 body {
-    font: 0.8vw Helvetica, Arial;
+    font:
+        0.8vw Helvetica,
+        Arial;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +42,7 @@ body {
         align-items: center;
         justify-content: center;
         color: $white;
-        margin-left: 1.0vw;
+        margin-left: 1vw;
         background-color: $light_black;
         border-radius: 0.8vw;
         text-transform: capitalize;
@@ -49,13 +50,13 @@ body {
         text-align: center;
         opacity: 0;
         transform: rotateY(-90deg);
-        transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+        transition: all 0.5s cubic-bezier(0.36, -0.64, 0.34, 1.76);
     }
 
     .show {
         opacity: 1;
         transform: none;
-        transition: all 0.5s cubic-bezier(.36, -0.64, .34, 1.76);
+        transition: all 0.5s cubic-bezier(0.36, -0.64, 0.34, 1.76);
     }
 }
 
@@ -117,7 +118,6 @@ $oneUWidth: 3vw;
     }
 }
 
-
 .alphasPart {
     display: flex;
     flex-direction: column;
@@ -127,7 +127,7 @@ $oneUWidth: 3vw;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        margin-top: calc($oneUWidth / 8)
+        margin-top: calc($oneUWidth / 8);
     }
 }
 
@@ -155,7 +155,7 @@ $oneUWidth: 3vw;
 
 .cornerText {
     position: absolute;
-    top: 0.20vw;
+    top: 0.2vw;
     right: 0.3vw;
     font-size: 0.75vw;
 }
@@ -189,35 +189,35 @@ $oneUWidth: 3vw;
 }
 
 .sixPtwofiveU {
-    width: 6.25*$oneUWidth;
+    width: 6.25 * $oneUWidth;
 }
 
 .twoPsevenfiveU {
-    width: 2.75*$oneUWidth;
+    width: 2.75 * $oneUWidth;
 }
 
 .twoPtwofiveU {
-    width: 2.25*$oneUWidth;
+    width: 2.25 * $oneUWidth;
 }
 
 .twoU {
-    width: 2*$oneUWidth;
+    width: 2 * $oneUWidth;
 }
 
 .onePsevenfiveU {
-    width: 1.75*$oneUWidth;
+    width: 1.75 * $oneUWidth;
 }
 
 .onePfiveU {
-    width: 1.5*$oneUWidth;
+    width: 1.5 * $oneUWidth;
 }
 
 .onePtwofiveU {
-    width: 1.25*$oneUWidth;
+    width: 1.25 * $oneUWidth;
 }
 
 .zeroPthreeUH {
-    height: calc($oneUWidth / 3)
+    height: calc($oneUWidth / 3);
 }
 
 .oneUH {
@@ -225,8 +225,8 @@ $oneUWidth: 3vw;
 }
 
 .twoUH {
-    height: 2*$oneUWidth;
-    line-height: 2*$oneUWidth;
+    height: 2 * $oneUWidth;
+    line-height: 2 * $oneUWidth;
 }
 
 .raise {
@@ -239,7 +239,7 @@ $oneUWidth: 3vw;
 
 .raiseBlue {
     transform: translateY(-0.3em);
-    background-color: $blue ;
+    background-color: $blue;
     color: $white !important;
     transition-duration: 0.1s;
     border-color: transparent !important;
@@ -267,7 +267,9 @@ $oneUWidth: 3vw;
     // padding-bottom: .17*$oneUWidth;
     height: 8vw;
     width: 8vw;
-    font: 1.4vw Verdana, Sans-Serif;
+    font:
+        1.4vw Verdana,
+        Sans-Serif;
     border-radius: 100vw;
     background-color: $darkerwhite;
     border: 0.1vw solid transparent;
@@ -286,6 +288,4 @@ $oneUWidth: 3vw;
         background-color: $red;
         color: $white;
     }
-
-
 }
