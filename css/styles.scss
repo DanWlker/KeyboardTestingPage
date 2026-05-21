@@ -13,6 +13,10 @@ $yellow: #ebcb8b;
 $othergreen: #a3be8c;
 $purple: #b48ead;
 
+html {
+    height: 90%;
+}
+
 body {
     font:
         0.8vw Helvetica,
@@ -23,6 +27,8 @@ body {
     background-color: $black;
     padding-top: 3vw;
     color: $white;
+    justify-content: center;
+    height: 100%;
 }
 
 .logger {

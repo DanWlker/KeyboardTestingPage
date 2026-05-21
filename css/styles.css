@@ -1,3 +1,7 @@
+html {
+  height: 90%;
+}
+
 body {
   font: 0.8vw Helvetica, Arial;
   display: flex;
@@ -6,6 +10,8 @@ body {
   background-color: #2e3440;
   padding-top: 3vw;
   color: #eceff4;
+  justify-content: center;
+  height: 100%;
 }
 
 .logger {
